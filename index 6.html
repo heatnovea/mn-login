@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MN-Login</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+        }
+        .textbox {
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            outline: none;
+            width: 200px;
+            transition: border-color 0.3s;
+        }
+        .textbox:focus {
+            border-color: green;
+            box-shadow: 0 0 10px green;
+        }
+        .button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: darkgreen;
+        }
+        .message {
+            margin-top: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="password" id="password" class="textbox" placeholder="Enter Password">
+        <button class="button" onclick="checkPassword()">Enter</button>
+    </div>
+    <div class="message" id="message"></div>
+
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById("password").value;
+            const messageDiv = document.getElementById("message");
+            const correctPassword = "MegaNerds_2024!";
+
+            if (passwordInput === correctPassword) {
+                messageDiv.textContent = "Enter";
+                window.location.href = "https://meganerds.tiiny.site";
+            } else {
+                messageDiv.textContent = "Wrong Password";
+            }
+        }
+    </script>
+</body>
+</html>
